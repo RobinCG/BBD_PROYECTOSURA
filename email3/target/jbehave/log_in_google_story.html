@@ -1,0 +1,86 @@
+<div class="story">
+<h1></h1>
+<div class="path">log_in_google_story.story</div>
+<div class="meta">
+<div class="keyword">Meta:</div>
+<div class="property">@Ingreso a la plataforma</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Ingreso al correo de gmail validando mensaje de error solicitand usuario. CP002</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given voy a la pagina de gmail.com</div>
+<div class="step">When doy click en el boton next &lt;band&gt;</div>
+<div class="step">Then veo un mensaje de error usuario</div>
+<table>
+<thead>
+<tr>
+<th>band</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {band=true, Ingreso=a la plataforma}</h3>
+<div class="step successful">Given voy a la pagina de gmail.com</div>
+<div class="step successful">When doy click en el boton next <span class="step parameter">true</span></div>
+<div class="step successful">Then veo un mensaje de error usuario</div>
+</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Ingreso al correo de gmail validando mensaje de error solicitand password. CP003</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given voy a la pagina de gmail.com</div>
+<div class="step">When ingreso mi usuario &lt;usuariogmail&gt;</div>
+<div class="step">And doy click en el boton next &lt;band&gt;</div>
+<div class="step">Then veo un mensaje de error password</div>
+<table>
+<thead>
+<tr>
+<th>usuariogmail</th><th>band</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>suramydream1@gmail.com</td><td>false</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {usuariogmail=suramydream1@gmail.com, band=false, Ingreso=a la plataforma}</h3>
+<div class="step successful">Given voy a la pagina de gmail.com</div>
+<div class="step successful">When ingreso mi usuario <span class="step parameter">suramydream1@gmail.com</span></div>
+<div class="step successful">And doy click en el boton next <span class="step parameter">false</span></div>
+<div class="step successful">Then veo un mensaje de error password</div>
+</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Ingreso al correo de gmail. Camino exitoso CP001</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given voy a la pagina de gmail.com</div>
+<div class="step">When ingreso mi usuario &lt;usuariogmail&gt;</div>
+<div class="step">And ingreso mi password &lt;passwordgmail&gt;</div>
+<div class="step">Then el inbox de gmail es visible</div>
+<div class="step">And me salgo de la plataforma</div>
+<table>
+<thead>
+<tr>
+<th>usuariogmail</th><th>passwordgmail</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>suramydream1@gmail.com</td><td>suramydream</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {usuariogmail=suramydream1@gmail.com, passwordgmail=suramydream, Ingreso=a la plataforma}</h3>
+<div class="step successful">Given voy a la pagina de gmail.com</div>
+<div class="step successful">When ingreso mi usuario <span class="step parameter">suramydream1@gmail.com</span></div>
+<div class="step successful">And ingreso mi password <span class="step parameter">suramydream</span></div>
+<div class="step successful">Then el inbox de gmail es visible</div>
+<div class="step successful">And me salgo de la plataforma</div>
+</div>
+</div>
+</div>

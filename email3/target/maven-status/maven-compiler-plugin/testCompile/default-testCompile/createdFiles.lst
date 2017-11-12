@@ -1,0 +1,8 @@
+CheckGmailStory.class
+UnitTest\GmailPageTest.class
+LogInGoogleStory.class
+SendEmailStory.class
+Steps\CheckGmailStep.class
+Steps\SendEmailStep.class
+UnitTest\UtilPageTest.class
+Steps\LogInGoogleStep.class

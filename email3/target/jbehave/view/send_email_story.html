@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>send_email_story</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+<div class="story">
+<h1></h1>
+<div class="path">send_email_story.story</div>
+<div class="meta">
+<div class="keyword">Meta:</div>
+<div class="property">@Validaci&oacute;n de envio de correo.</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Me logueo al correo de gmail  CP001</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given me dirijo a la pagina de gmail.com</div>
+<div class="step">When ingreso mi usuario &lt;usuariogmail&gt;</div>
+<div class="step">And ingreso mi password &lt;passwordgmail&gt;</div>
+<div class="step">Then el inbox es visible</div>
+<table>
+<thead>
+<tr>
+<th>usuariogmail</th><th>passwordgmail</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>suramydream1@gmail.com</td><td>suramydream</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {usuariogmail=suramydream1@gmail.com, passwordgmail=suramydream, Validaci&oacute;n=de envio de correo.}</h3>
+<div class="step successful">Given me dirijo a la pagina de gmail.com</div>
+<div class="step successful">When ingreso mi usuario <span class="step parameter">suramydream1@gmail.com</span></div>
+<div class="step successful">And ingreso mi password <span class="step parameter">suramydream</span></div>
+<div class="step successful">Then el inbox es visible</div>
+</div>
+</div>
+<div class="scenario">
+<h2>Scenario: verifico el env&iacute;o exitoso del correo a trav&eacute;s de gmail CP002</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given selecciono el boton redactar</div>
+<div class="step">When escribo el correo del destinatario &lt;destinatarioemail&gt;</div>
+<div class="step">And escribo el asunto del correo &lt;subjectemail&gt;</div>
+<div class="step">And escribo el cuerpo del correo &lt;bodyemail&gt;</div>
+<div class="step">And selecciono el boton enviar</div>
+<div class="step">Then existe un mensaje de exito</div>
+<table>
+<thead>
+<tr>
+<th>destinatarioemail</th><th>subjectemail</th><th>bodyemail</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>suramydream2@gmail.com</td><td>Prueba sura. Analista de calidad</td><td>Contenido del correo para pruebas con sura.</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {destinatarioemail=suramydream2@gmail.com, subjectemail=Prueba sura. Analista de calidad, bodyemail=Contenido del correo para pruebas con sura., Validaci&oacute;n=de envio de correo.}</h3>
+<div class="step successful">Given selecciono el boton redactar</div>
+<div class="step successful">When escribo el correo del destinatario <span class="step parameter">suramydream2@gmail.com</span></div>
+<div class="step successful">And escribo el asunto del correo <span class="step parameter">Prueba sura. Analista de calidad</span></div>
+<div class="step successful">And escribo el cuerpo del correo <span class="step parameter">Contenido del correo para pruebas con sura.</span></div>
+<div class="step successful">And selecciono el boton enviar</div>
+<div class="step successful">Then existe un mensaje de exito</div>
+</div>
+</div>
+<div class="scenario">
+<h2>Scenario: abrir el mensaje enviado, sin desloguearse de la plataforma CP003</h2>
+<div class="step successful">Given que estoy en el inbox</div>
+<div class="step successful">When existe un mensaje de exito</div>
+<div class="step successful">And doy click al mensaje de exito</div>
+<div class="step successful">Then puedo ver el correo enviado</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Validar existencia de destinatario CP004</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given selecciono el boton redactar</div>
+<div class="step">When escribo el asunto del correo &lt;subjectemail&gt;</div>
+<div class="step">And escribo el cuerpo del correo &lt;bodyemail&gt;</div>
+<div class="step">And selecciono el boton enviar</div>
+<div class="step">Then se presenta un mensaje de error</div>
+<div class="step">And doy aceptar al boton</div>
+<table>
+<thead>
+<tr>
+<th>subjectemail</th><th>bodyemail</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Prueba sura. Analista de calidad</td><td>Contenido del correo para pruebas con sura.</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {subjectemail=Prueba sura. Analista de calidad, bodyemail=Contenido del correo para pruebas con sura., Validaci&oacute;n=de envio de correo.}</h3>
+<div class="step successful">Given selecciono el boton redactar</div>
+<div class="step successful">When escribo el asunto del correo <span class="step parameter">Prueba sura. Analista de calidad</span></div>
+<div class="step successful">And escribo el cuerpo del correo <span class="step parameter">Contenido del correo para pruebas con sura.</span></div>
+<div class="step successful">And selecciono el boton enviar</div>
+<div class="step successful">Then se presenta un mensaje de error</div>
+<div class="step successful">And doy aceptar al boton</div>
+</div>
+</div>
+</div>
+
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

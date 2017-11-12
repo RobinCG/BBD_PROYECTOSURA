@@ -1,0 +1,57 @@
+
+(log_in_google_story.story)
+Meta:
+@Ingreso a la plataforma
+
+Scenario: Ingreso al correo de gmail validando mensaje de error solicitand usuario. CP002
+Examples:
+Given voy a la pagina de gmail.com
+When doy click en el boton next <band>
+Then veo un mensaje de error usuario
+
+|band|
+|true|
+
+Example: {band=true, Ingreso=a la plataforma}
+Given voy a la pagina de gmail.com
+When doy click en el boton next true
+Then veo un mensaje de error usuario
+
+
+Scenario: Ingreso al correo de gmail validando mensaje de error solicitand password. CP003
+Examples:
+Given voy a la pagina de gmail.com
+When ingreso mi usuario <usuariogmail>
+And doy click en el boton next <band>
+Then veo un mensaje de error password
+
+|usuariogmail|band|
+|suramydream1@gmail.com|false|
+
+Example: {usuariogmail=suramydream1@gmail.com, band=false, Ingreso=a la plataforma}
+Given voy a la pagina de gmail.com
+When ingreso mi usuario suramydream1@gmail.com
+And doy click en el boton next false
+Then veo un mensaje de error password
+
+
+Scenario: Ingreso al correo de gmail. Camino exitoso CP001
+Examples:
+Given voy a la pagina de gmail.com
+When ingreso mi usuario <usuariogmail>
+And ingreso mi password <passwordgmail>
+Then el inbox de gmail es visible
+And me salgo de la plataforma
+
+|usuariogmail|passwordgmail|
+|suramydream1@gmail.com|suramydream|
+
+Example: {usuariogmail=suramydream1@gmail.com, passwordgmail=suramydream, Ingreso=a la plataforma}
+Given voy a la pagina de gmail.com
+When ingreso mi usuario suramydream1@gmail.com
+And ingreso mi password suramydream
+Then el inbox de gmail es visible
+And me salgo de la plataforma
+
+
+

@@ -1,0 +1,71 @@
+
+(send_email_story.story)
+Meta:
+@Validación de envio de correo.
+
+Scenario: Me logueo al correo de gmail  CP001
+Examples:
+Given me dirijo a la pagina de gmail.com
+When ingreso mi usuario <usuariogmail>
+And ingreso mi password <passwordgmail>
+Then el inbox es visible
+
+|usuariogmail|passwordgmail|
+|suramydream1@gmail.com|suramydream|
+
+Example: {usuariogmail=suramydream1@gmail.com, passwordgmail=suramydream, Validación=de envio de correo.}
+Given me dirijo a la pagina de gmail.com
+When ingreso mi usuario suramydream1@gmail.com
+And ingreso mi password suramydream
+Then el inbox es visible
+
+
+Scenario: verifico el envío exitoso del correo a través de gmail CP002
+Examples:
+Given selecciono el boton redactar
+When escribo el correo del destinatario <destinatarioemail>
+And escribo el asunto del correo <subjectemail>
+And escribo el cuerpo del correo <bodyemail>
+And selecciono el boton enviar
+Then existe un mensaje de exito
+
+|destinatarioemail|subjectemail|bodyemail|
+|suramydream2@gmail.com|Prueba sura. Analista de calidad|Contenido del correo para pruebas con sura.|
+
+Example: {destinatarioemail=suramydream2@gmail.com, subjectemail=Prueba sura. Analista de calidad, bodyemail=Contenido del correo para pruebas con sura., Validación=de envio de correo.}
+Given selecciono el boton redactar
+When escribo el correo del destinatario suramydream2@gmail.com
+And escribo el asunto del correo Prueba sura. Analista de calidad
+And escribo el cuerpo del correo Contenido del correo para pruebas con sura.
+And selecciono el boton enviar
+Then existe un mensaje de exito
+
+
+Scenario: abrir el mensaje enviado, sin desloguearse de la plataforma CP003
+Given que estoy en el inbox
+When existe un mensaje de exito
+And doy click al mensaje de exito
+Then puedo ver el correo enviado
+
+Scenario: Validar existencia de destinatario CP004
+Examples:
+Given selecciono el boton redactar
+When escribo el asunto del correo <subjectemail>
+And escribo el cuerpo del correo <bodyemail>
+And selecciono el boton enviar
+Then se presenta un mensaje de error
+And doy aceptar al boton
+
+|subjectemail|bodyemail|
+|Prueba sura. Analista de calidad|Contenido del correo para pruebas con sura.|
+
+Example: {subjectemail=Prueba sura. Analista de calidad, bodyemail=Contenido del correo para pruebas con sura., Validación=de envio de correo.}
+Given selecciono el boton redactar
+When escribo el asunto del correo Prueba sura. Analista de calidad
+And escribo el cuerpo del correo Contenido del correo para pruebas con sura.
+And selecciono el boton enviar
+Then se presenta un mensaje de error
+And doy aceptar al boton
+
+
+

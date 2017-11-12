@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>log_in_google_story</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: txt"><![CDATA[
+
+(log_in_google_story.story)
+Meta:
+@Ingreso a la plataforma
+
+Scenario: Ingreso al correo de gmail validando mensaje de error solicitand usuario. CP002
+Examples:
+Given voy a la pagina de gmail.com
+When doy click en el boton next <band>
+Then veo un mensaje de error usuario
+
+|band|
+|true|
+
+Example: {band=true, Ingreso=a la plataforma}
+Given voy a la pagina de gmail.com
+When doy click en el boton next true
+Then veo un mensaje de error usuario
+
+
+Scenario: Ingreso al correo de gmail validando mensaje de error solicitand password. CP003
+Examples:
+Given voy a la pagina de gmail.com
+When ingreso mi usuario <usuariogmail>
+And doy click en el boton next <band>
+Then veo un mensaje de error password
+
+|usuariogmail|band|
+|suramydream1@gmail.com|false|
+
+Example: {usuariogmail=suramydream1@gmail.com, band=false, Ingreso=a la plataforma}
+Given voy a la pagina de gmail.com
+When ingreso mi usuario suramydream1@gmail.com
+And doy click en el boton next false
+Then veo un mensaje de error password
+
+
+Scenario: Ingreso al correo de gmail. Camino exitoso CP001
+Examples:
+Given voy a la pagina de gmail.com
+When ingreso mi usuario <usuariogmail>
+And ingreso mi password <passwordgmail>
+Then el inbox de gmail es visible
+And me salgo de la plataforma
+
+|usuariogmail|passwordgmail|
+|suramydream1@gmail.com|suramydream|
+
+Example: {usuariogmail=suramydream1@gmail.com, passwordgmail=suramydream, Ingreso=a la plataforma}
+Given voy a la pagina de gmail.com
+When ingreso mi usuario suramydream1@gmail.com
+And ingreso mi password suramydream
+Then el inbox de gmail es visible
+And me salgo de la plataforma
+
+
+
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

@@ -1,0 +1,23 @@
+
+(check_gmail_story.story)
+Meta:
+@Ingreso a la plataforma
+
+Scenario: Ingreso al correo de gmail. Revisar correo enviado CP001
+Examples:
+Given voy a la pagina de correos gmail.com
+When entro el usuario <usuariogmail>
+And ingreso mi password in gmail <passwordgmail>
+Then valido la informacion del correo <message>
+
+|usuariogmail|passwordgmail|message|
+|suramydream2@gmail.com|suramydream|Prueba sura. Analista de calidad - Contenido del correo para pruebas con sura.|
+
+Example: {usuariogmail=suramydream2@gmail.com, passwordgmail=suramydream, message=Prueba sura. Analista de calidad - Contenido del correo para pruebas con sura., Ingreso=a la plataforma}
+Given voy a la pagina de correos gmail.com
+When entro el usuario suramydream2@gmail.com
+And ingreso mi password in gmail suramydream
+Then valido la informacion del correo Prueba sura. Analista de calidad - Contenido del correo para pruebas con sura.
+
+
+
